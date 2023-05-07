@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
             var spawn = Random.Range(0, _spawnPoints.Count);
             Instantiate(_gangEnemies[i], _spawnPoints[spawn].transform.position, Quaternion.identity);
             _spawnPoints.RemoveAt(spawn);
-            yield return new WaitForSeconds(_delay );
+            yield return new WaitForSeconds(_delay);
         }
     }
 }
