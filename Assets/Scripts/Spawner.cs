@@ -7,7 +7,7 @@ public class Spawner : MonoBehaviour
     [SerializeField] private List<Enemy> _gangEnemies;
     [SerializeField] private List<Transform> _spawnPoints;
 
-    private int _delay  = 2;
+    private int _delay = 2;
 
     private void Start()
     {
