@@ -17,13 +17,14 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        var spawn = Random.Range(0, _spawnPoints.Count -1);
+        var spawn = Random.Range(0, _spawnPoints.Count);
+        var waitForSeconds = new WaitForSeconds(_delay);
 
         for (int i = 0; i < _gangEnemies.Count; i++)
         {
             Instantiate(_gangEnemies[i], _spawnPoints[spawn].transform.position, Quaternion.identity);
             _spawnPoints.RemoveAt(spawn);
-            yield return new WaitForSeconds(_delay);
+            yield return waitForSeconds;
         }
     }
 }
